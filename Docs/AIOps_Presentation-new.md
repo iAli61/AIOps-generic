@@ -3,7 +3,7 @@
 ## 1. Introduction & Purpose (Non-Technical)
 
 * **What is AIOps?** A framework for bringing automation, consistency, and visibility to AI applications
-* **Why does Novo Nordisk  Nordisk need it?** To standardize development approaches across projects like QCP and CMC
+* **Why does Novo Nordisk  Nordisk need it?** To standardize development approaches across projects like Use-Case1 and Use-Case2
 * **Business Value:**
   - Faster development cycles with standardized tools
   - Higher quality AI solutions through consistent evaluation
@@ -30,8 +30,8 @@ flowchart TD
         
     end
     
-    QCP[Use-Case 1] --> Dev
-    CMC[Use-Case 2] --> Dev
+    Use-Case1[Use-Case 1] --> Dev
+    Use-Case2[Use-Case 2] --> Dev
     
     classDef primary fill:#4287f5,stroke:#0066cc,color:white
     classDef secondary fill:#f5a742,stroke:#cc8c00,color:white
@@ -39,7 +39,7 @@ flowchart TD
     
     class Dev,Flow,Eval,Prod,Insights primary
     class Auto,Stand,Gov,Obs secondary
-    class QCP,CMC project
+    class Use-Case1,Use-Case2 project
 ```
 ```mermaid
     flowchart TD
@@ -128,7 +128,7 @@ flowchart LR
 
 ## 3. Ongoing Gen AI Projects & How AIOps Fits
 
-**Quality Control Platform (QCP):**
+**Use-Case1:**
 * **Current State:** Development stage with manual data processing
 * **Business Purpose:** Streamline quality control report generation
 * **How AIOps Helps:**
@@ -137,7 +137,7 @@ flowchart LR
   - Reliable deployment pipeline via Azure DevOps
   - Performance monitoring and alerting
 
-**Content Management & Compliance (CMC):**
+**Use-Case2:**
 * **Current State:** Implementation phase, RAG-based approach
 * **Business Purpose:** Find relevant documents and generate summaries
 * **How AIOps Helps:**
@@ -157,49 +157,49 @@ flowchart TD
         DataOps["Data Management"]
     end
     
-    subgraph "QCP Use Case"
-        QCP_Data["Quality Data\n(Bacteria samples, readings)"]
-        QCP_Flow["Report Generation\nPrompt Flow"]
-        QCP_Deploy["Azure ML\nManaged Endpoints"]
-        QCP_UI["Web Interface"]
+    subgraph "Use-Case1 Use Case"
+        Use-Case1_Data["Quality Data\n(Bacteria samples, readings)"]
+        Use-Case1_Flow["Report Generation\nPrompt Flow"]
+        Use-Case1_Deploy["Azure ML\nManaged Endpoints"]
+        Use-Case1_UI["Web Interface"]
     end
     
-    subgraph "CMC Use Case"
-        CMC_Data["Documents\n(Q&A Archive)"]
-        CMC_Search["Azure AI Search"]
-        CMC_Flow["Document Retrieval\nRAG Flow"]
-        CMC_Deploy["Secure Deployment\n(V-net, Novo Nordisk  Nordisk Corp)"]
+    subgraph "Use-Case2 Use Case"
+        Use-Case2_Data["Documents\n(Q&A Archive)"]
+        Use-Case2_Search["Azure AI Search"]
+        Use-Case2_Flow["Document Retrieval\nRAG Flow"]
+        Use-Case2_Deploy["Secure Deployment\n(V-net, Novo Nordisk  Nordisk Corp)"]
     end
     
-    %% Connections from AIOps to QCP
-    Template -->|"Standardized patterns"| QCP_Flow
-    Pipeline -->|"Automated deployment"| QCP_Deploy
-    Eval -->|"Testing with golden datasets"| QCP_Flow
-    Monitor -->|"Performance tracking"| QCP_Deploy
+    %% Connections from AIOps to Use-Case1
+    Template -->|"Standardized patterns"| Use-Case1_Flow
+    Pipeline -->|"Automated deployment"| Use-Case1_Deploy
+    Eval -->|"Testing with golden datasets"| Use-Case1_Flow
+    Monitor -->|"Performance tracking"| Use-Case1_Deploy
     
-    %% Connections from AIOps to CMC
-    Template -->|"RAG templates"| CMC_Flow
-    Pipeline -->|"Secure deployment"| CMC_Deploy
-    DataOps -->|"Integration patterns"| CMC_Search
-    Monitor -->|"Usage analytics"| CMC_Deploy
+    %% Connections from AIOps to Use-Case2
+    Template -->|"RAG templates"| Use-Case2_Flow
+    Pipeline -->|"Secure deployment"| Use-Case2_Deploy
+    DataOps -->|"Integration patterns"| Use-Case2_Search
+    Monitor -->|"Usage analytics"| Use-Case2_Deploy
     
-    %% QCP internal flow
-    QCP_Data -->|"Input"| QCP_Flow
-    QCP_Flow -->|"Deploy"| QCP_Deploy
-    QCP_Deploy -->|"Serve"| QCP_UI
+    %% Use-Case1 internal flow
+    Use-Case1_Data -->|"Input"| Use-Case1_Flow
+    Use-Case1_Flow -->|"Deploy"| Use-Case1_Deploy
+    Use-Case1_Deploy -->|"Serve"| Use-Case1_UI
     
-    %% CMC internal flow
-    CMC_Data -->|"Index"| CMC_Search
-    CMC_Search -->|"Retrieve"| CMC_Flow
-    CMC_Flow -->|"Deploy"| CMC_Deploy
+    %% Use-Case2 internal flow
+    Use-Case2_Data -->|"Index"| Use-Case2_Search
+    Use-Case2_Search -->|"Retrieve"| Use-Case2_Flow
+    Use-Case2_Flow -->|"Deploy"| Use-Case2_Deploy
     
     classDef aiops fill:#4287f5,stroke:#0066cc,color:white
-    classDef qcp fill:#f542a7,stroke:#cc0066,color:white
-    classDef cmc fill:#42f59e,stroke:#00cc88,color:black
+    classDef use-case1 fill:#f542a7,stroke:#cc0066,color:white
+    classDef use-case2 fill:#42f59e,stroke:#00cc88,color:black
     
     class Template,Pipeline,Eval,Monitor,DataOps aiops
-    class QCP_Data,QCP_Flow,QCP_Deploy,QCP_UI qcp
-    class CMC_Data,CMC_Search,CMC_Flow,CMC_Deploy cmc
+    class Use-Case1_Data,Use-Case1_Flow,Use-Case1_Deploy,Use-Case1_UI use-case1
+    class Use-Case2_Data,Use-Case2_Search,Use-Case2_Flow,Use-Case2_Deploy use-case2
 ```
 
 ## 4. AIOps High-Level Workflow (Simplified)
@@ -256,12 +256,12 @@ flowchart LR
 ## 5. Implementation Roadmap & Next Steps
 
 **Immediate Actions (Next 30 Days):**
-* Complete AIOps pipeline setup for QCP use case
+* Complete AIOps pipeline setup for Use-Case1 use case
 * Define standard metrics for flow evaluation
 * Develop basic monitoring dashboards
 
 **Medium-Term (60-90 Days):**
-* Extend AIOps framework to CMC use case
+* Extend AIOps framework to Use-Case2 use case
 * Implement enhanced security controls
 * Create documentation and training materials
 
@@ -276,15 +276,15 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat %b %d
     
-    section QCP Implementation
-    Pipeline Configuration     :qcp1, 2025-05-15, 14d
-    Evaluation Metrics         :qcp2, after qcp1, 10d
-    Monitoring Setup           :qcp3, after qcp2, 7d
+    section Use-Case1 Implementation
+    Pipeline Configuration     :uc1_1, 2025-05-15, 14d
+    Evaluation Metrics         :uc1_2, after uc1_1, 10d
+    Monitoring Setup           :uc1_3, after uc1_2, 7d
     
-    section CMC Implementation
-    Flow Templates             :cmc1, 2025-06-15, 14d
-    Security Controls          :cmc2, after cmc1, 10d
-    RAG Integration            :cmc3, after cmc2, 7d
+    section Use-Case2 Implementation
+    Flow Templates             :uc2_1, 2025-06-15, 14d
+    Security Controls          :uc2_2, after uc2_1, 10d
+    RAG Integration            :uc2_3, after uc2_2, 7d
     
     section Documentation & Training
     Developer Guidelines       :doc1, 2025-06-20, 10d
