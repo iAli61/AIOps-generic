@@ -1,0 +1,159 @@
+﻿Work Item Type,Title,Tags,Description
+Feature,"DevOps Project & Repository Configuration","AI Ops","Configuration of development repositories and project structure in GitHub for LLMOps implementation."
+"User Story","As a DevOps engineer, I want to create and configure a new GitHub project for LLMOps","AzureDevOps; Setup; LLMOps; DevOpsProject; RepositoryManagement; Branching; BranchPolicies; TemplateCloning; AI Ops","DevOps Project & Repository Configuration: Set up a new GitHub project with proper repository structure (cloning template) and branch policies (development, main).
+
+Suggested tasks:
+- Create a new GitHub project
+- Clone the genaiops-promptflow-template into the project repository
+- Set up 'development' and 'main' branches
+- Configure branch policies for 'main' (e.g., PR reviews, build validation)
+- Configure branch policies for 'development' (if needed)"
+"User Story","As a DevOps engineer, I want to create and configure a new GitHub repository for LLMOps","GitHub; Setup; LLMOps; RepositoryManagement; Branching; BranchPolicies; TemplateCloning; AI Ops","GitHub Project & Repository Configuration: Set up a new GitHub repository with proper repository structure (cloning template) and branch policies (main, development).
+
+Suggested tasks:
+- Create a new GitHub repository
+- Clone the genaiops-promptflow-template into the repository
+- Set up 'development' and 'main' branches (with development as the default branch)
+- Configure branch protection rules for 'main' (e.g., PR reviews, status checks)
+- Configure branch protection rules for 'development' (if needed)"
+Feature,"Authentication & Access Control","AI Ops","Implementation of secure access controls, permission management, and authentication mechanisms for Azure resources and GitHub."
+"User Story","As a DevOps engineer, I want to create Azure service principals for GitHub","Azure; Security; AzureDevOps; ServicePrincipals; RBAC; Configuration; AI Ops","Authentication & Access Control: Create service principals with appropriate RBAC permissions for Azure resource access and configure them for use with GitHub.
+
+Suggested tasks:
+- Create Azure Service Principal(s) for GitHub
+- Assign necessary RBAC roles (e.g., Contributor on Resource Group) to the Service Principal(s)
+- Store Service Principal credentials securely (e.g., Azure Key Vault or GitHub Variable Groups marked as secret)"
+"User Story","As a DevOps engineer, I want to set up authentication between GitHub and Azure resources","Azure; Security; AzureDevOps; Authentication; ServiceConnections; PipelineSecurity; AI Ops","Authentication & Access Control: Create service connections in GitHub to enable pipeline authentication to Azure resources.
+
+Suggested tasks:
+- Create Azure Resource Manager (ARM) service connection(s) in GitHub using the created Service Principal(s)
+- Test service connection(s) to ensure proper authentication
+- Grant pipelines access to the service connection(s)"
+"User Story","As a DevOps engineer, I want to configure variable groups in GitHub for secrets management","AzureDevOps; Security; Configuration; VariableGroups; SecretsManagement; EnvironmentConfiguration; AI Ops","Authentication & Access Control: Create variable groups to store environment-specific configurations and secrets for different environments (dev, prod).
+
+Suggested tasks:
+- Identify environment-specific configurations and secrets
+- Create variable groups in GitHub for each environment (dev, prod, etc.)
+- Add variables and mark sensitive ones as secret
+- Link variable groups to CI/CD pipelines as needed
+- Secure access to variable groups"
+"User Story","As a DevOps engineer, I want to configure GitHub Secrets and Variables for secrets management","GitHub; Security; Configuration; SecretsManagement; EnvironmentConfiguration; AI Ops","Authentication & Access Control: Create GitHub Secrets and Variables to store environment-specific configurations and secrets for different environments (dev, prod).
+
+Suggested tasks:
+- Identify environment-specific configurations and secrets
+- Create GitHub Environments for each environment (dev, prod, etc.)
+- Add variables to each environment for non-sensitive configuration
+- Add repository secrets for sensitive information (marked as secret)
+- Link secrets and variables to GitHub workflows as needed
+- Configure access restrictions to environments"
+"User Story","As a DevOps engineer, I want to enable workflow authentication to Azure resources using GitHub secrets","GitHub; Security; Authentication; Azure; ServicePrincipals; WorkflowAuthentication; AI Ops","Authentication & Access Control: Create GitHub secrets to enable workflow authentication to Azure resources.
+
+Suggested tasks:
+- Add the AZURE_CREDENTIALS GitHub secret in the repository using the created Service Principal
+- Test workflow authentication to ensure proper connectivity
+- Configure required GitHub environment permissions"
+"User Story","As a DevOps engineer, I want to create Azure service principals for GitHub","Azure; Security; GitHub; ServicePrincipals; RBAC; Configuration; AI Ops","Authentication & Access Control: Create service principals with appropriate RBAC permissions for Azure resource access and configure them for use with GitHub.
+
+Suggested tasks:
+- Create Azure Service Principal(s) for GitHub
+- Assign necessary RBAC roles (e.g., Contributor on Resource Group) to the Service Principal(s)
+- Store Service Principal credentials securely (e.g., Azure Key Vault or GitHub Secrets marked as secret)"
+Feature,"Prompt Flow Integration & Configuration","AI Ops","Integration and configuration of Azure Prompt Flow for developing, testing, and optimizing AI workflows in the pipeline."
+"User Story","As a data scientist, I want to set up connections to Azure OpenAI within Prompt Flow","PromptFlow; AzureOpenAI; Configuration; Connections; Authentication; LocalDevelopment; AzureExecution; AI Ops","Prompt Flow Integration & Configuration: Configure connections to Azure OpenAI service with appropriate authentication for prompt flow execution (e.g., using .env file for local, GitHub Secrets for cloud).
+
+Suggested tasks:
+- Create a .env.sample file with required connection keys for local development
+- Document how to create a .env file from the sample for local execution
+- Create Azure ML connections for Azure OpenAI (using service principal or managed identity) for cloud execution
+- Reference these connections in Prompt Flow configurations (experiment.yaml, flow.dag.yaml)"
+"User Story","As a data scientist/DevOps engineer, I want to configure runtime for Prompt flow execution","PromptFlow; AzureML; AIStudio; Configuration; Runtime; ComputeInstance; AutomaticRuntime; AI Ops","Prompt Flow Integration & Configuration: Set up compute instances or automatic runtime provisioning for executing prompt flows in Azure ML/AI Studio.
+
+Suggested tasks:
+- Determine compute requirements for flows
+- Create Azure ML compute instances for development/testing if needed
+- Configure automatic runtime for serverless execution of flows
+- Define custom environments (Docker images with dependencies) for runtime if needed
+- Ensure runtime has necessary access to connections and data"
+"User Story","As a data scientist/developer, I want to execute flows on Azure using configured environments","AzureExecution; PromptFlow; EnvironmentConfiguration; env.yml; Dockerfile; Dependencies; AI Ops","Prompt Flow Integration & Configuration: Configure execution environment variables and dependencies (env.yml, Dockerfile) to run flows on Azure instead of locally.
+
+Suggested tasks:
+- Define Python dependencies in requirements.txt for each flow
+- Create conda environment definition (env.yml) if needed
+- Create Dockerfile for custom environment if conda is not sufficient
+- Build and register custom environment in Azure ML
+- Reference the custom environment in Prompt Flow run configurations (experiment.yaml)"
+Feature,"Experimentation & Local Development","AI Ops","Setup and configuration for local development and experimentation workflows for prompt engineering and model optimization."
+"User Story","As a data scientist, I want to configure experiment.yaml for my use case","PromptFlow; Experimentation; Configuration; experiment.yaml; Datasets; EvaluationMetrics; Variants; Hyperparameters; InnerLoop; AI Ops","Experimentation & Local Development: Update experiment.yaml file with appropriate flow configurations, datasets, evaluation metrics, variants, and hyperparameters for inner-loop experimentation.
+
+Suggested tasks:
+- Understand the structure and schema of experiment.yaml
+- Define flow paths, data paths, and output paths
+- Specify standard and evaluation flows
+- Configure variants and hyperparameters for experimentation
+- Define evaluation metrics and their configurations
+- Test experiment.yaml locally using Prompt Flow CLI/SDK"
+"User Story","As a developer/data scientist, I want to set up a local development environment for prompt flow experimentation","PromptFlow; Development; LocalDevelopment; Setup; Dependencies; EnvironmentVariables; .env; AI Ops","Experimentation & Local Development: Install necessary dependencies (promptflow, promptflow-tools, etc.) and configure local environment variables (e.g., via .env file) for local flow execution and evaluation.
+
+Suggested tasks:
+- Document required local development tools (Python, VS Code, Prompt Flow extension)
+- Provide instructions for installing promptflow, promptflow-tools, and other core packages
+- Explain how to set up .env file for local Azure OpenAI connections and other secrets
+- Guide on using VS Code Prompt Flow extension for local development and testing"
+"User Story","As a developer/data scientist, I want to leverage configuration-based development to minimize boilerplate code","PromptFlow; Development; Configuration; experiment.yaml; Efficiency; BestPractices; AI Ops","Experimentation & Local Development: Utilize experiment.yaml and other configuration files to define flow behavior, experiments, and deployments.
+
+Suggested tasks:
+- Promote the use of experiment.yaml for defining variants, metrics, and datasets
+- Encourage use of deployment_config.json for endpoint settings
+- Provide examples and documentation on how to effectively use these configuration files
+- Minimize custom scripting by leveraging built-in Prompt Flow capabilities and configuration"
+Feature,"Documentation & Reporting","AI Ops","Implementation of comprehensive documentation and reporting systems for flow performance, experiments, and operational metrics."
+"User Story","As a stakeholder/data scientist, I want comprehensive reports on flow performance and experiments","Reporting; Metrics; Experimentation; StakeholderCommunication; PerformanceAnalysis; CSV; HTML; AI Ops","Documentation & Reporting: Set up metrics collection and report generation (CSV, HTML) to evaluate flow variants, hyperparameters, and overall performance.
+
+Suggested tasks:
+- Define standard format for collecting metrics from evaluation flows
+- Develop scripts to aggregate metrics from multiple runs/variants
+- Generate reports in CSV format for easy analysis
+- Generate reports in HTML format for better visualization and sharing
+- Automate report generation as part of CI/CD or evaluation pipelines"
+Feature,"Notifications","AI Ops","Implementation of notification systems for pipeline events, alerts, and approvals."
+"User Story","As a DevOps engineer, I want to set up email notifications for pipeline events","Notifications; AzureDevOps; Communication; CI/CD; DeploymentApprovals; PipelineStatus; AI Ops","Notifications: Configure email notifications for deployment approvals and pipeline status updates in GitHub.
+
+Suggested tasks:
+- Configure GitHub notification settings for CI/CD pipelines
+- Set up email alerts for pipeline completion (success/failure)
+- Set up email alerts for pending deployment approvals
+- Customize notification content for clarity"
+"User Story","As a DevOps engineer, I want to set up email notifications for workflow events in GitHub","Notifications; GitHub; Communication; WorkflowStatus; Approvals; AI Ops","Notifications: Configure email notifications for workflow status updates and required approvals in GitHub.
+
+Suggested tasks:
+- Configure GitHub notification settings for workflows
+- Set up email alerts for workflow completion (success/failure)
+- Set up notification for required reviews or approvals
+- Customize notification content as needed"
+Feature,"Testing & Validation","AI Ops","Implementation of comprehensive testing and validation frameworks for pipeline components, flows, and deployments."
+"User Story","As a data scientist/DevOps engineer, I want to implement an optional human-in-the-loop step for prompt metric validation","Validation; HumanInLoop; PromptEngineering; Quality; Metrics; DeploymentGate; AI Ops","Testing & Validation: Provide a mechanism to manually validate prompt metrics before proceeding with deployment.
+
+Suggested tasks:
+- Design a process for human review of evaluation metrics/outputs
+- Integrate a manual validation/approval step in CI/CD pipeline (e.g., GitHub approval gate)
+- Define criteria for approving/rejecting based on human review
+- Log human review feedback for traceability
+- Automate continuation or rollback based on review outcome"
+Feature,"Platform Usability","AI Ops","Enhancement of platform usability for multi-tenant scenarios, multi-flow management, and lifecycle management."
+"User Story","As a development team, we want to use the genaiops-promptflow-template as a centralized platform for multiple LLM use cases","Platform; LLMOps; Scalability; MultiTenancy; LifecycleManagement; genaiops-promptflow-template; AI Ops","Platform Usability: Ensure the template supports hosting code for multiple flows and manages their lifecycles independently.
+
+Suggested tasks:
+- Validate that the folder structure supports multiple independent flows/use-cases
+- Ensure CI/CD pipelines can be configured per flow/use-case
+- Verify that experiment.yaml and deployment_config.json are scoped per flow
+- Test onboarding a new flow to ensure isolation and independent lifecycle management"
+Feature,"Model/Flow Deployment to Endpoints","AI Ops","Implementation of deployment strategies and configurations for various Azure endpoints and Kubernetes."
+"User Story","As a DevOps engineer, I want to set up deployment configurations for Kubernetes endpoints","Deployment; Kubernetes; Configuration; DeploymentConfig; Scaling; ConnectionSettings; AI Ops","Model/Flow Deployment to Endpoints: Configure deployment_config.json for Kubernetes deployments with appropriate compute resources, scaling parameters, and connection settings.
+
+Suggested tasks:
+- Define structure for deployment_config.json for Kubernetes
+- Specify Kubernetes cluster details and namespace
+- Configure resource requests and limits (CPU, memory)
+- Define scaling parameters (e.g., HPA settings)
+- Manage environment variables and secrets for Kubernetes deployment
+- Parameterize deployment_config.json for different environments"
