@@ -1,9 +1,9 @@
-# AIOps Design for Gen AI Projects at Novo Nordisk 
+# AIOps Design for Gen AI Projects at  X 
 
 ## 1. Introduction & Purpose (Non-Technical)
 
 * **What is AIOps?** A framework for bringing automation, consistency, and visibility to AI applications
-* **Why does Novo Nordisk  Nordisk need it?** To standardize development approaches across projects like Use-Case1 and Use-Case2
+* **Why does  X   need it?** To standardize development approaches across projects like Use-Case1 and Use-Case2
 * **Business Value:**
   - Faster development cycles with standardized tools
   - Higher quality AI solutions through consistent evaluation
@@ -142,7 +142,7 @@ flowchart LR
 * **Business Purpose:** Find relevant documents and generate summaries
 * **How AIOps Helps:**
   - Ready-to-use RAG flow templates
-  - Secure deployment within Novo Nordisk  Nordisk network
+  - Secure deployment within  X   network
   - Integration patterns for Azure AI Search
   - Configurable data pipelines
 
@@ -168,7 +168,7 @@ flowchart TD
         Use-Case2_Data["Documents\n(Q&A Archive)"]
         Use-Case2_Search["Azure AI Search"]
         Use-Case2_Flow["Document Retrieval\nRAG Flow"]
-        Use-Case2_Deploy["Secure Deployment\n(V-net, Novo Nordisk  Nordisk Corp)"]
+        Use-Case2_Deploy["Secure Deployment\n(V-net,  X   Corp)"]
     end
     
     %% Connections from AIOps to Use-Case1

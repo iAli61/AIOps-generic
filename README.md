@@ -2,7 +2,7 @@
 
 ## Overview
 
-The AIOps (AI Operations) framework provides a standardized approach for developing, evaluating, deploying, and monitoring AI applications at Novo Nordisk. The framework focuses on bringing automation, consistency, and visibility to AI applications, with a specific emphasis on GenAI and LLM-based projects.
+The AIOps (AI Operations) framework provides a standardized approach for developing, evaluating, deploying, and monitoring AI applications at  X. The framework focuses on bringing automation, consistency, and visibility to AI applications, with a specific emphasis on GenAI and LLM-based projects.
 
 ## Purpose
 
