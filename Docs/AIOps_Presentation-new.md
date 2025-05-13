@@ -1,9 +1,9 @@
-# AIOps Design for Gen AI Projects at  X 
+# AIOps Design for Gen AI Projects 
 
 ## 1. Introduction & Purpose (Non-Technical)
 
 * **What is AIOps?** A framework for bringing automation, consistency, and visibility to AI applications
-* **Why does  X   need it?** To standardize development approaches across projects like Use-Case1 and Use-Case2
+* **Why is it needed?** To standardize development approaches across projects like Use Case 1 and Use Case 2
 * **Business Value:**
   - Faster development cycles with standardized tools
   - Higher quality AI solutions through consistent evaluation
@@ -30,8 +30,8 @@ flowchart TD
         
     end
     
-    Use-Case1[Use-Case 1] --> Dev
-    Use-Case2[Use-Case 2] --> Dev
+    Use-Case1[Use Case 1] --> Dev
+    Use-Case2[Use Case 2] --> Dev
     
     classDef primary fill:#4287f5,stroke:#0066cc,color:white
     classDef secondary fill:#f5a742,stroke:#cc8c00,color:white
@@ -128,21 +128,21 @@ flowchart LR
 
 ## 3. Ongoing Gen AI Projects & How AIOps Fits
 
-**Use-Case1:**
+**Use Case 1:**
 * **Current State:** Development stage with manual data processing
-* **Business Purpose:** Streamline quality control report generation
+* **Business Purpose:** Streamline report generation
 * **How AIOps Helps:**
   - Standardized prompt flows for consistent report generation
   - Automated testing with golden datasets
   - Reliable deployment pipeline via Azure DevOps
   - Performance monitoring and alerting
 
-**Use-Case2:**
+**Use Case 2:**
 * **Current State:** Implementation phase, RAG-based approach
 * **Business Purpose:** Find relevant documents and generate summaries
 * **How AIOps Helps:**
   - Ready-to-use RAG flow templates
-  - Secure deployment within  X   network
+  - Secure deployment 
   - Integration patterns for Azure AI Search
   - Configurable data pipelines
 
@@ -157,49 +157,49 @@ flowchart TD
         DataOps["Data Management"]
     end
     
-    subgraph "Use-Case1 Use Case"
-        Use-Case1_Data["Quality Data\n(Bacteria samples, readings)"]
-        Use-Case1_Flow["Report Generation\nPrompt Flow"]
-        Use-Case1_Deploy["Azure ML\nManaged Endpoints"]
-        Use-Case1_UI["Web Interface"]
+    subgraph "Use Case 1"
+        UseCase1_Data["Quality Data\n(Sample data)"]
+        UseCase1_Flow["Report Generation\nPrompt Flow"]
+        UseCase1_Deploy["Azure ML\nManaged Endpoints"]
+        UseCase1_UI["Web Interface"]
     end
     
-    subgraph "Use-Case2 Use Case"
-        Use-Case2_Data["Documents\n(Q&A Archive)"]
-        Use-Case2_Search["Azure AI Search"]
-        Use-Case2_Flow["Document Retrieval\nRAG Flow"]
-        Use-Case2_Deploy["Secure Deployment\n(V-net,  X   Corp)"]
+    subgraph "Use Case 2"
+        UseCase2_Data["Documents\n(Q&A Archive)"]
+        UseCase2_Search["Azure AI Search"]
+        UseCase2_Flow["Document Retrieval\nRAG Flow"]
+        UseCase2_Deploy["Secure Deployment\n(Private Network)"]
     end
     
-    %% Connections from AIOps to Use-Case1
-    Template -->|"Standardized patterns"| Use-Case1_Flow
-    Pipeline -->|"Automated deployment"| Use-Case1_Deploy
-    Eval -->|"Testing with golden datasets"| Use-Case1_Flow
-    Monitor -->|"Performance tracking"| Use-Case1_Deploy
+    %% Connections from AIOps to Use Case 1
+    Template -->|"Standardized patterns"| UseCase1_Flow
+    Pipeline -->|"Automated deployment"| UseCase1_Deploy
+    Eval -->|"Testing with golden datasets"| UseCase1_Flow
+    Monitor -->|"Performance tracking"| UseCase1_Deploy
     
-    %% Connections from AIOps to Use-Case2
-    Template -->|"RAG templates"| Use-Case2_Flow
-    Pipeline -->|"Secure deployment"| Use-Case2_Deploy
-    DataOps -->|"Integration patterns"| Use-Case2_Search
-    Monitor -->|"Usage analytics"| Use-Case2_Deploy
+    %% Connections from AIOps to Use Case 2
+    Template -->|"RAG templates"| UseCase2_Flow
+    Pipeline -->|"Secure deployment"| UseCase2_Deploy
+    DataOps -->|"Integration patterns"| UseCase2_Search
+    Monitor -->|"Usage analytics"| UseCase2_Deploy
     
-    %% Use-Case1 internal flow
-    Use-Case1_Data -->|"Input"| Use-Case1_Flow
-    Use-Case1_Flow -->|"Deploy"| Use-Case1_Deploy
-    Use-Case1_Deploy -->|"Serve"| Use-Case1_UI
+    %% Use Case 1 internal flow
+    UseCase1_Data -->|"Input"| UseCase1_Flow
+    UseCase1_Flow -->|"Deploy"| UseCase1_Deploy
+    UseCase1_Deploy -->|"Serve"| UseCase1_UI
     
-    %% Use-Case2 internal flow
-    Use-Case2_Data -->|"Index"| Use-Case2_Search
-    Use-Case2_Search -->|"Retrieve"| Use-Case2_Flow
-    Use-Case2_Flow -->|"Deploy"| Use-Case2_Deploy
+    %% Use Case 2 internal flow
+    UseCase2_Data -->|"Index"| UseCase2_Search
+    UseCase2_Search -->|"Retrieve"| UseCase2_Flow
+    UseCase2_Flow -->|"Deploy"| UseCase2_Deploy
     
     classDef aiops fill:#4287f5,stroke:#0066cc,color:white
-    classDef use-case1 fill:#f542a7,stroke:#cc0066,color:white
-    classDef use-case2 fill:#42f59e,stroke:#00cc88,color:black
+    classDef usecase1 fill:#f542a7,stroke:#cc0066,color:white
+    classDef usecase2 fill:#42f59e,stroke:#00cc88,color:black
     
     class Template,Pipeline,Eval,Monitor,DataOps aiops
-    class Use-Case1_Data,Use-Case1_Flow,Use-Case1_Deploy,Use-Case1_UI use-case1
-    class Use-Case2_Data,Use-Case2_Search,Use-Case2_Flow,Use-Case2_Deploy use-case2
+    class UseCase1_Data,UseCase1_Flow,UseCase1_Deploy,UseCase1_UI usecase1
+    class UseCase2_Data,UseCase2_Search,UseCase2_Flow,UseCase2_Deploy usecase2
 ```
 
 ## 4. AIOps High-Level Workflow (Simplified)
@@ -255,13 +255,13 @@ flowchart LR
 
 ## 5. Implementation Roadmap & Next Steps
 
-**Immediate Actions (Next 30 Days):**
-* Complete AIOps pipeline setup for Use-Case1 use case
+**Immediate Actions:**
+* Complete AIOps pipeline setup for first use case
 * Define standard metrics for flow evaluation
 * Develop basic monitoring dashboards
 
-**Medium-Term (60-90 Days):**
-* Extend AIOps framework to Use-Case2 use case
+**Medium-Term:**
+* Extend AIOps framework to additional use cases
 * Implement enhanced security controls
 * Create documentation and training materials
 
@@ -276,25 +276,25 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat %b %d
     
-    section Use-Case1 Implementation
-    Pipeline Configuration     :uc1_1, 2025-05-15, 14d
+    section Use Case 1 Implementation
+    Pipeline Configuration     :uc1_1, 2023-05-15, 14d
     Evaluation Metrics         :uc1_2, after uc1_1, 10d
     Monitoring Setup           :uc1_3, after uc1_2, 7d
     
-    section Use-Case2 Implementation
-    Flow Templates             :uc2_1, 2025-06-15, 14d
+    section Use Case 2 Implementation
+    Flow Templates             :uc2_1, 2023-06-15, 14d
     Security Controls          :uc2_2, after uc2_1, 10d
     RAG Integration            :uc2_3, after uc2_2, 7d
     
     section Documentation & Training
-    Developer Guidelines       :doc1, 2025-06-20, 10d
+    Developer Guidelines       :doc1, 2023-06-20, 10d
     Admin Documentation        :doc2, after doc1, 7d
     Training Sessions          :doc3, after doc2, 14d
     
     section Future Enhancements
-    Databricks Connectors      :fut1, 2025-08-01, 30d
-    RAG Evaluation Framework   :fut2, 2025-08-15, 30d
-    Fine-tuning Support        :fut3, 2025-09-01, 45d
+    Databricks Connectors      :fut1, 2023-08-01, 30d
+    RAG Evaluation Framework   :fut2, 2023-08-15, 30d
+    Fine-tuning Support        :fut3, 2023-09-01, 45d
 ```
 
 ## 6. Discussion & Q&A

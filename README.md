@@ -2,16 +2,21 @@
 
 ## Overview
 
-The AIOps (AI Operations) framework provides a standardized approach for developing, evaluating, deploying, and monitoring AI applications at  X. The framework focuses on bringing automation, consistency, and visibility to AI applications, with a specific emphasis on GenAI and LLM-based projects.
+The AIOps (AI Operations) framework provides a standardized approach for developing, evaluating, deploying, and monitoring AI applications. The framework focuses on bringing automation, consistency, and visibility to AI applications, with a specific emphasis on GenAI and LLM-based projects.
 
 ## Purpose
 
-This framework aims to:
-- Standardize development approaches across different AI projects
-- Provide faster development cycles with consistent tools and patterns
-- Ensure higher quality AI solutions through systematic evaluation
-- Reduce maintenance costs through automation
-- Improve visibility into AI application performance
+This framework aims to provide a logical approach for creating GenAI projects through:
+
+- Evaluating and assessing the requirements of new incoming projects
+- Providing a comprehensive design that can be adopted to any new GenAI project
+- Standardizing development approaches across different AI projects
+- Providing faster development cycles with consistent tools and patterns
+- Ensuring higher quality AI solutions through systematic evaluation
+- Reducing maintenance costs through automation
+- Improving visibility into AI application performance
+
+The framework includes a questionnaire for assessing requirements of new incoming projects and initial comprehensive backlog items that enable teams to start projects much faster based on established designs.
 
 ## Core Capabilities
 
@@ -45,7 +50,7 @@ Underpinning these components are four core capabilities:
 
 The framework currently supports the following use cases:
 
-### comming soon
+### coming soon
 
 ## Implementation Workflow
 
@@ -67,17 +72,15 @@ To begin using the AIOps framework:
 2. Complete the requirements questionnaire at `Docs/RequirementsQuestionnaire.md`
 3. Follow the presentation slides in `Docs/AIOps_Presentation-new.md` for an overview
 
-
-
 ## Implementation Roadmap
 
-**Immediate Actions (Next 30 Days):**
-- Complete AIOps pipeline setup for QCP use case
+**Immediate Actions:**
+- Complete AIOps pipeline setup for first use case
 - Define standard metrics for flow evaluation
 - Develop basic monitoring dashboards
 
-**Medium-Term (60-90 Days):**
-- Extend AIOps framework to CMC use case
+**Medium-Term:**
+- Extend AIOps framework to additional use cases
 - Implement enhanced security controls
 - Create documentation and training materials
 
@@ -92,7 +95,3 @@ Please follow these steps to contribute to the project:
 1. Review the existing documentation
 2. Ensure your changes align with the AIOps framework principles
 3. Submit pull requests with comprehensive descriptions
-
-## Contact
-
-For more information about this project, please contact the project maintainers.

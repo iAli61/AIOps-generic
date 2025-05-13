@@ -1,6 +1,6 @@
 ![alt text](image.png)
 
-# LLMOps Architecture Diagram Based on Repository Analysis
+# LLMOps Architecture Diagram
 
 This architecture supports both experimentation and deployment of large language model applications.
 
